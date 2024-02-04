@@ -1,2 +1,2 @@
-print("my name is neeraj")
-print("my nam is ")
+print("my name is KHan ")
+print("my nam is NEERAJ ")
