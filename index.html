@@ -1,0 +1,2720 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cibara Comforts - Lodge in Harihar</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <style>
+      /* Modern CSS Reset */
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      /* Modern Font Import */
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&display=swap");
+
+      :root {
+        --primary: #1e3a8a;
+        --primary-light: #3b5bce;
+        --secondary: #ffc136;
+        --secondary-light: #ffe082;
+        --accent: #ff6b6b;
+        --success: #06d6a0;
+        --dark: #252525;
+        --light: #f8f9fa;
+        --gray: #6c757d;
+        --white: #ffffff;
+        --shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        --shadow-lg: 0 15px 35px rgba(0, 0, 0, 0.15);
+        --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        --gradient: linear-gradient(
+          135deg,
+          var(--primary) 0%,
+          var(--primary-light) 100%
+        );
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        background-color: var(--light);
+        color: var(--dark);
+        line-height: 1.6;
+        overflow-x: hidden;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      /* Modern Header with Glass Effect */
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: rgba(30, 58, 138, 0.95);
+        backdrop-filter: blur(15px);
+        color: white;
+        padding: 1em 2em;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        transition: var(--transition);
+      }
+
+      header.scrolled {
+        padding: 0.7em 2em;
+        background: rgba(30, 58, 138, 0.98);
+      }
+
+      header .logo {
+        font-size: 1.8em;
+        font-weight: 700;
+        letter-spacing: -0.5px;
+        font-family: "Playfair Display", serif;
+      }
+
+      .logo-yellow {
+        color: var(--secondary);
+      }
+
+      .logo-blue {
+        color: var(--white);
+      }
+
+      nav ul {
+        list-style: none;
+        display: flex;
+        gap: 2rem;
+      }
+
+      nav ul li a {
+        color: var(--white);
+        text-decoration: none;
+        font-weight: 500;
+        position: relative;
+        padding: 0.5rem 0;
+        transition: var(--transition);
+      }
+
+      nav ul li a::after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background-color: var(--secondary);
+        transition: width 0.3s ease;
+      }
+
+      nav ul li a:hover::after {
+        width: 100%;
+      }
+
+      nav ul li a:hover {
+        color: var(--secondary);
+      }
+
+      /* Hero section */
+      .hero {
+        position: relative;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        text-align: center;
+        overflow: hidden;
+        margin-top: 0;
+      }
+
+      .carousel {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+
+      .carousel-slide {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+        opacity: 0;
+        transition: opacity 1.5s ease-in-out, transform 3s ease-in-out;
+        transform: scale(1.05);
+      }
+
+      .carousel-slide.active {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      .carousel::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          0deg,
+          rgba(0, 0, 0, 0.5) 0%,
+          rgba(0, 0, 0, 0.3) 50%,
+          rgba(0, 0, 0, 0.5) 100%
+        );
+        z-index: 1;
+      }
+
+      .hero-text {
+        position: relative;
+        z-index: 2;
+        max-width: 900px;
+        padding: 0 20px;
+        color: var(--white);
+      }
+
+      .hero h1 {
+        font-size: 3.5rem;
+        font-weight: 700;
+        line-height: 1.2;
+        margin-bottom: 1rem;
+        font-family: "Playfair Display", serif;
+        animation: fadeInDown 1.5s;
+      }
+
+      .hero p {
+        font-size: 1.25rem;
+        margin: 1.5rem 0;
+        animation: fadeInUp 2s;
+        font-weight: 300;
+        letter-spacing: 1px;
+      }
+
+      .cta-buttons {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-top: 2rem;
+      }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        background: var(--gradient);
+        color: white;
+        padding: 15px 30px;
+        text-decoration: none;
+        border-radius: 50px;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        box-shadow: var(--shadow);
+        transition: var(--transition);
+        border: 2px solid transparent;
+        animation: fadeInUp 2.5s;
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+      }
+
+      .button::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: var(--secondary);
+        transform: translateY(100%);
+        transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+        z-index: -1;
+      }
+
+      .button:hover {
+        color: var(--dark);
+        transform: translateY(-3px);
+        box-shadow: var(--shadow-lg);
+      }
+
+      .button:hover::after {
+        transform: translateY(0);
+      }
+
+      .button-secondary {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border: 2px solid rgba(255, 255, 255, 0.3);
+      }
+
+      .button-secondary::after {
+        background-color: var(--white);
+      }
+
+      /* Section Common Styling */
+      section {
+        padding: 100px 20px;
+        position: relative;
+      }
+
+      section h2 {
+        font-size: 2.5rem;
+        color: var(--primary);
+        margin-bottom: 3rem;
+        text-align: center;
+        font-family: "Playfair Display", serif;
+        font-weight: 700;
+        position: relative;
+        display: inline-block;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      section h2::after {
+        content: "";
+        position: absolute;
+        width: 80px;
+        height: 3px;
+        background: var(--gradient);
+        bottom: -15px;
+        left: 50%;
+        transform: translateX(-50%);
+        border-radius: 2px;
+      }
+
+      /* Rooms Section - Enhanced */
+      .rooms-section {
+        background-color: var(--white);
+      }
+
+      .room-cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 30px;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .room-card {
+        background-color: var(--white);
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: var(--shadow);
+        transition: var(--transition);
+        position: relative;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        border: 1px solid rgba(0, 0, 0, 0.05);
+      }
+
+      .image-slider {
+        position: relative;
+        width: 100%;
+        height: 250px;
+        overflow: hidden;
+      }
+
+      .image-slider img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: opacity 1.5s ease, transform 3s ease;
+        opacity: 0;
+        transform: scale(1.1);
+      }
+
+      .image-slider img.active {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      .room-badge {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        background: var(--accent);
+        color: var(--white);
+        padding: 8px 16px;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        font-weight: 600;
+        z-index: 2;
+        backdrop-filter: blur(10px);
+      }
+
+      .room-info {
+        padding: 25px;
+        text-align: left;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      .room-info h3 {
+        font-size: 1.5rem;
+        color: var(--primary);
+        margin-bottom: 10px;
+        font-weight: 600;
+      }
+
+      .room-info p {
+        font-size: 0.95rem;
+        color: var(--gray);
+        margin: 10px 0;
+        line-height: 1.6;
+      }
+
+      .room-features {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin: 15px 0;
+      }
+
+      .feature-tag {
+        background: var(--light);
+        color: var(--primary);
+        padding: 5px 12px;
+        border-radius: 15px;
+        font-size: 0.75rem;
+        font-weight: 500;
+      }
+
+      .room-pricing {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 20px;
+        padding-top: 20px;
+        border-top: 1px solid var(--light);
+      }
+
+      .price-info {
+        flex-grow: 1;
+      }
+
+      .price-from {
+        font-size: 0.85rem;
+        color: var(--gray);
+      }
+
+      .price-main {
+        font-size: 1.6rem;
+        color: var(--secondary);
+        font-weight: 700;
+      }
+
+      .book-room-btn {
+        background: var(--primary);
+        color: var(--white);
+        border: none;
+        padding: 12px 20px;
+        border-radius: 25px;
+        font-weight: 500;
+        cursor: pointer;
+        transition: var(--transition);
+        font-size: 0.9rem;
+      }
+
+      .book-room-btn:hover {
+        background: var(--primary-light);
+        transform: translateY(-2px);
+        box-shadow: var(--shadow);
+      }
+
+      .room-card:hover {
+        transform: translateY(-8px);
+        box-shadow: var(--shadow-lg);
+      }
+
+      /* Special Offers Section */
+      .offers-section {
+        background: var(--gradient);
+        color: var(--white);
+        text-align: center;
+        padding: 60px 20px;
+      }
+
+      .offers-section h2 {
+        color: var(--white);
+        margin-bottom: 40px;
+      }
+
+      .offers-section h2::after {
+        background: var(--secondary);
+      }
+
+      .offers-container {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .offer-card {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(20px);
+        padding: 30px;
+        border-radius: 20px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        margin-bottom: 20px;
+      }
+
+      .offer-card h3 {
+        color: var(--secondary);
+        margin-bottom: 15px;
+        font-size: 1.3rem;
+      }
+
+      .offer-card p {
+        font-size: 0.95rem;
+        opacity: 0.9;
+      }
+
+      /* Minimalistic Booking Section */
+      .booking-section {
+        background-color: var(--light);
+        padding: 80px 20px;
+      }
+
+      .booking-container {
+        max-width: 700px;
+        margin: 0 auto;
+        background: var(--white);
+        padding: 40px;
+        border-radius: 20px;
+        box-shadow: var(--shadow);
+      }
+
+      .booking-form {
+        display: grid;
+        gap: 20px;
+      }
+
+      .form-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+      }
+
+      .form-group {
+        position: relative;
+      }
+
+      .form-group label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: 500;
+        color: var(--primary);
+        font-size: 0.9rem;
+      }
+
+      .form-group input,
+      .form-group select,
+      .form-group textarea {
+        width: 100%;
+        padding: 12px 15px;
+        border: 2px solid var(--light);
+        border-radius: 10px;
+        background: var(--white);
+        color: var(--dark);
+        font-size: 1rem;
+        transition: var(--transition);
+        font-family: inherit;
+      }
+
+      .form-group input:focus,
+      .form-group select:focus,
+      .form-group textarea:focus {
+        outline: none;
+        border-color: var(--primary);
+        box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.1);
+      }
+
+      .form-group textarea {
+        resize: vertical;
+        min-height: 60px;
+      }
+
+      .guest-info {
+        background: var(--light);
+        padding: 25px;
+        border-radius: 15px;
+        margin: 25px 0;
+      }
+
+      .guest-info h4 {
+        color: var(--primary);
+        margin-bottom: 20px;
+        font-size: 1.1rem;
+      }
+
+      .ac-option {
+        background: rgba(30, 58, 138, 0.05);
+        padding: 20px;
+        border-radius: 12px;
+        margin: 20px 0;
+        border-left: 4px solid var(--primary);
+      }
+
+      .booking-summary {
+        background: var(--light);
+        padding: 25px;
+        border-radius: 15px;
+        margin: 25px 0;
+        display: none;
+      }
+
+      .summary-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 12px 0;
+        padding: 8px 0;
+      }
+
+      .summary-row:not(:last-child) {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      }
+
+      .summary-row.total {
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: var(--primary);
+        border-bottom: none;
+        margin-top: 15px;
+        padding-top: 15px;
+        border-top: 2px solid var(--primary);
+      }
+
+      .book-button {
+        width: 100%;
+        padding: 18px;
+        background: var(--gradient);
+        color: var(--white);
+        border: none;
+        border-radius: 50px;
+        font-size: 1.1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: var(--transition);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-top: 20px;
+      }
+
+      .book-button:hover:not(:disabled) {
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-lg);
+      }
+
+      .book-button:disabled {
+        background: var(--gray);
+        cursor: not-allowed;
+        transform: none;
+      }
+
+      .success-message {
+        background: var(--success);
+        color: var(--white);
+        padding: 15px;
+        border-radius: 10px;
+        margin: 20px 0;
+        text-align: center;
+        font-weight: 500;
+        display: none;
+      }
+
+      .success-message.show {
+        display: block;
+        animation: fadeInDown 0.5s ease;
+      }
+
+      /* Enhanced Modal */
+      .modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.9);
+        justify-content: center;
+        align-items: center;
+        z-index: 2000;
+        opacity: 0;
+        transition: opacity 0.4s ease;
+      }
+
+      .modal.show {
+        opacity: 1;
+      }
+
+      .modal-content {
+        background: var(--white);
+        width: 95%;
+        max-width: 900px;
+        border-radius: 20px;
+        overflow: hidden;
+        position: relative;
+        transform: scale(0.9);
+        transition: transform 0.4s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+        box-shadow: var(--shadow-lg);
+        max-height: 90vh;
+        overflow-y: auto;
+      }
+
+      .modal.show .modal-content {
+        transform: scale(1);
+      }
+
+      .close {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        font-size: 24px;
+        color: var(--white);
+        background: rgba(0, 0, 0, 0.7);
+        width: 45px;
+        height: 45px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        cursor: pointer;
+        z-index: 10;
+        transition: var(--transition);
+      }
+
+      .close:hover {
+        background: var(--accent);
+        color: var(--white);
+        transform: rotate(90deg);
+      }
+
+      .modal-slider {
+        position: relative;
+        background: var(--dark);
+        height: 400px;
+      }
+
+      .modal-slider img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      .arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--white);
+        background-color: rgba(0, 0, 0, 0.7);
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: var(--transition);
+        font-size: 18px;
+        z-index: 5;
+      }
+
+      .arrow:hover {
+        background-color: var(--secondary);
+        color: var(--dark);
+      }
+
+      .arrow.left {
+        left: 20px;
+      }
+
+      .arrow.right {
+        right: 20px;
+      }
+
+      .modal-details {
+        padding: 40px;
+      }
+
+      .modal-pricing {
+        background: var(--light);
+        padding: 25px;
+        border-radius: 15px;
+        margin: 25px 0;
+      }
+
+      .pricing-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 15px;
+        margin-top: 15px;
+      }
+
+      .pricing-option {
+        background: var(--white);
+        padding: 15px;
+        border-radius: 10px;
+        text-align: center;
+        border: 2px solid transparent;
+        transition: var(--transition);
+      }
+
+      .pricing-option:hover {
+        border-color: var(--primary);
+        transform: translateY(-2px);
+      }
+
+      .pricing-option .guests {
+        font-size: 0.9rem;
+        color: var(--gray);
+        margin-bottom: 5px;
+      }
+
+      .pricing-option .price {
+        font-size: 1.3rem;
+        color: var(--primary);
+        font-weight: 600;
+      }
+
+      .modal-amenities h3 {
+        color: var(--primary);
+        font-size: 1.8rem;
+        margin-bottom: 20px;
+        font-weight: 600;
+      }
+
+      .modal-amenities ul {
+        list-style: none;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+        gap: 15px;
+      }
+
+      .modal-amenities li {
+        font-size: 1rem;
+        padding: 12px 18px;
+        background: var(--light);
+        border-radius: 25px;
+        display: flex;
+        align-items: center;
+        transition: var(--transition);
+      }
+
+      .modal-amenities li::before {
+        content: "✓";
+        color: var(--success);
+        font-weight: bold;
+        margin-right: 10px;
+        font-size: 1.1rem;
+      }
+
+      .modal-amenities li:hover {
+        background: rgba(30, 58, 138, 0.1);
+        transform: translateX(5px);
+      }
+
+      /* Modern Amenities Section */
+      .amenities {
+        background-color: var(--white);
+      }
+
+      .amenities-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+        gap: 25px;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .amenity-item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+        padding: 30px 15px;
+        background-color: var(--light);
+        border-radius: 20px;
+        transition: var(--transition);
+        box-shadow: var(--shadow);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .amenity-item::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 0;
+        background: var(--gradient);
+        z-index: -1;
+        transition: height 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+      }
+
+      .amenity-item i {
+        font-size: 2.5rem;
+        color: var(--primary);
+        margin-bottom: 15px;
+        transition: var(--transition);
+      }
+
+      .amenity-item span {
+        font-weight: 500;
+        transition: var(--transition);
+      }
+
+      .amenity-item:hover {
+        transform: translateY(-10px);
+        box-shadow: var(--shadow-lg);
+      }
+
+      .amenity-item:hover::before {
+        height: 100%;
+      }
+
+      .amenity-item:hover span,
+      .amenity-item:hover i {
+        color: var(--white);
+      }
+
+      /* Location Section */
+      .location-section {
+        background-color: var(--light);
+      }
+
+      .location-content {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 40px;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .map-container {
+        flex: 1;
+        min-width: 300px;
+        height: 450px;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: var(--shadow);
+      }
+
+      .proximity-info {
+        flex: 1;
+        min-width: 300px;
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+      }
+
+      .proximity-info h3 {
+        font-size: 1.8rem;
+        color: var(--primary);
+        margin-bottom: 20px;
+        font-weight: 600;
+        font-family: "Playfair Display", serif;
+      }
+
+      .info-box {
+        background-color: var(--white);
+        padding: 25px;
+        border-radius: 15px;
+        box-shadow: var(--shadow);
+        transition: var(--transition);
+        position: relative;
+        overflow: hidden;
+        border-left: 5px solid var(--primary);
+      }
+
+      .info-box::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 5px;
+        height: 100%;
+        background: var(--gradient);
+        transition: width 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+      }
+
+      .info-box:hover {
+        transform: translateX(10px);
+        box-shadow: var(--shadow-lg);
+      }
+
+      .info-box:hover::before {
+        width: 100%;
+      }
+
+      .info-box h4 {
+        font-size: 1.3rem;
+        color: var(--primary);
+        margin-bottom: 10px;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .info-box p {
+        font-size: 1rem;
+        color: var(--gray);
+        transition: var(--transition);
+      }
+
+      .info-box:hover h4,
+      .info-box:hover p {
+        color: var(--white);
+      }
+
+      /* Contact Section - Fixed Alignment */
+      .contact-section {
+        background-color: var(--white);
+        text-align: center;
+        padding: 80px 20px;
+      }
+
+      .contact-container {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .contact-section p {
+        font-size: 1.1rem;
+        color: var(--gray);
+        margin: 20px 0;
+        line-height: 1.6;
+      }
+
+      .contact-info {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+        margin: 40px 0;
+      }
+
+      .contact-card {
+        background: var(--light);
+        padding: 30px 20px;
+        border-radius: 15px;
+        transition: var(--transition);
+        box-shadow: var(--shadow);
+      }
+
+      .contact-card:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-lg);
+      }
+
+      .contact-card i {
+        font-size: 2.5rem;
+        color: var(--primary);
+        margin-bottom: 15px;
+      }
+
+      .contact-card h4 {
+        color: var(--primary);
+        margin-bottom: 10px;
+        font-size: 1.2rem;
+      }
+
+      .contact-card p,
+      .contact-card a {
+        color: var(--gray);
+        text-decoration: none;
+        font-weight: 500;
+      }
+
+      .contact-card a:hover {
+        color: var(--primary);
+      }
+
+      /* FAQ Section - New Feature */
+      .faq-section {
+        background: var(--light);
+        padding: 80px 20px;
+      }
+
+      .faq-container {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .faq-item {
+        background: var(--white);
+        margin-bottom: 15px;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: var(--shadow);
+      }
+
+      .faq-question {
+        width: 100%;
+        padding: 20px;
+        background: none;
+        border: none;
+        text-align: left;
+        font-size: 1.1rem;
+        font-weight: 500;
+        color: var(--primary);
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transition: var(--transition);
+      }
+
+      .faq-question:hover {
+        background: var(--light);
+      }
+
+      .faq-answer {
+        padding: 0 20px;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease, padding 0.3s ease;
+      }
+
+      .faq-answer.show {
+        padding: 20px;
+        max-height: 200px;
+      }
+
+      .faq-answer p {
+        color: var(--gray);
+        line-height: 1.6;
+      }
+
+      /* WhatsApp Float Button */
+      .whatsapp-float {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        width: 60px;
+        height: 60px;
+        background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+        color: var(--white);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: var(--shadow-lg);
+        transition: var(--transition);
+        z-index: 1000;
+        text-decoration: none;
+        font-size: 1.5rem;
+      }
+
+      .whatsapp-float:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 35px rgba(37, 211, 102, 0.4);
+      }
+
+      /* Testimonials */
+      .testimonial-section {
+        background-color: var(--white);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .testimonial-section::before {
+        content: '"';
+        position: absolute;
+        top: 50px;
+        left: 50px;
+        font-size: 15rem;
+        color: rgba(30, 58, 138, 0.05);
+        font-family: "Playfair Display", serif;
+        line-height: 0;
+      }
+
+      .testimonial-slider {
+        position: relative;
+        width: 90%;
+        max-width: 800px;
+        margin: 0 auto;
+        overflow: hidden;
+        min-height: 250px;
+      }
+
+      .testimonial {
+        opacity: 0;
+        transform: translateX(100px);
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        transition: all 0.8s cubic-bezier(0.25, 0.8, 0.25, 1);
+        background-color: var(--light);
+        padding: 30px;
+        border-radius: 20px;
+        box-shadow: var(--shadow);
+      }
+
+      .testimonial.active {
+        opacity: 1;
+        transform: translateX(0);
+        position: relative;
+      }
+
+      .testimonial p {
+        font-size: 1.1rem;
+        line-height: 1.7;
+        color: var(--gray);
+        margin-bottom: 20px;
+        font-style: italic;
+      }
+
+      .testimonial h4 {
+        font-size: 1rem;
+        color: var(--primary);
+        font-weight: 600;
+      }
+
+      .stars {
+        font-size: 1.3rem;
+        color: var(--secondary);
+        margin: 0.8rem 0;
+      }
+
+      /* Footer */
+      footer {
+        background: var(--gradient);
+        color: var(--white);
+        padding: 40px 20px;
+        text-align: center;
+      }
+
+      .footer-content {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .footer-links {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        margin-bottom: 20px;
+        flex-wrap: wrap;
+      }
+
+      .footer-links a {
+        color: var(--white);
+        text-decoration: none;
+        transition: var(--transition);
+      }
+
+      .footer-links a:hover {
+        color: var(--secondary);
+      }
+
+      /* Hamburger Menu */
+      .hamburger {
+        display: none;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 30px;
+        height: 20px;
+        cursor: pointer;
+        z-index: 1005;
+      }
+
+      .hamburger span {
+        display: block;
+        width: 100%;
+        height: 2px;
+        background-color: var(--white);
+        transition: var(--transition);
+      }
+
+      /* Animations */
+      @keyframes fadeInDown {
+        from {
+          opacity: 0;
+          transform: translateY(-30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Responsive Design */
+      @media (max-width: 1024px) {
+        .hero h1 {
+          font-size: 3rem;
+        }
+
+        .form-row {
+          grid-template-columns: 1fr;
+        }
+
+        .pricing-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      @media (max-width: 768px) {
+        .hero h1 {
+          font-size: 2.5rem;
+        }
+
+        .hero p {
+          font-size: 1.1rem;
+        }
+
+        .cta-buttons {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        nav ul {
+          display: none;
+          flex-direction: column;
+          position: fixed;
+          top: 0;
+          right: -300px;
+          width: 300px;
+          height: 100vh;
+          background: var(--gradient);
+          padding: 80px 20px 20px;
+          transition: right 0.3s ease;
+          z-index: 1000;
+        }
+
+        nav ul.active {
+          right: 0;
+          display: flex;
+          box-shadow: -5px 0 30px rgba(0, 0, 0, 0.2);
+        }
+
+        nav ul li {
+          margin: 15px 0;
+        }
+
+        .hamburger {
+          display: flex;
+        }
+
+        .hamburger.active span:nth-child(1) {
+          transform: translateY(9px) rotate(45deg);
+        }
+
+        .hamburger.active span:nth-child(2) {
+          opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+          transform: translateY(-9px) rotate(-45deg);
+        }
+
+        .booking-container {
+          padding: 30px 20px;
+        }
+
+        .location-content {
+          flex-direction: column;
+        }
+
+        .modal-content {
+          width: 95%;
+          margin: 20px;
+        }
+
+        .contact-info {
+          grid-template-columns: 1fr;
+        }
+
+        .pricing-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .room-pricing {
+          flex-direction: column;
+          gap: 15px;
+          text-align: center;
+        }
+
+        section {
+          padding: 60px 15px;
+        }
+
+        section h2 {
+          font-size: 2rem;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .hero h1 {
+          font-size: 2rem;
+        }
+
+        .hero p {
+          font-size: 1rem;
+        }
+
+        .room-cards {
+          grid-template-columns: 1fr;
+        }
+
+        .amenities-list {
+          grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+          gap: 15px;
+        }
+
+        .whatsapp-float {
+          bottom: 20px;
+          right: 20px;
+          width: 55px;
+          height: 55px;
+          font-size: 1.3rem;
+        }
+
+        .booking-container {
+          padding: 25px 15px;
+        }
+
+        .guest-info,
+        .ac-option,
+        .booking-summary {
+          padding: 20px 15px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header Section -->
+    <header>
+      <div class="logo">
+        <span class="logo-yellow">Cibara</span>
+        <span class="logo-blue">Comforts</span>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#rooms">Rooms</a></li>
+          <li><a href="#booking">Book Now</a></li>
+          <li><a href="#amenities">Amenities</a></li>
+          <li><a href="#location">Location</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#reviews">Reviews</a></li>
+        </ul>
+        <div class="hamburger" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+      <div class="carousel">
+        <div
+          class="carousel-slide active"
+          style="
+            background-image: linear-gradient(
+                rgba(0, 0, 0, 0.4),
+                rgba(0, 0, 0, 0.4)
+              ),
+              url('https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80');
+          "
+        ></div>
+        <div
+          class="carousel-slide"
+          style="
+            background-image: linear-gradient(
+                rgba(0, 0, 0, 0.4),
+                rgba(0, 0, 0, 0.4)
+              ),
+              url('https://images.unsplash.com/photo-1578683010236-d716f9a3f461?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80');
+          "
+        ></div>
+        <div
+          class="carousel-slide"
+          style="
+            background-image: linear-gradient(
+                rgba(0, 0, 0, 0.4),
+                rgba(0, 0, 0, 0.4)
+              ),
+              url('https://images.unsplash.com/photo-1571896349842-33c89424de2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80');
+          "
+        ></div>
+      </div>
+      <div class="hero-text">
+        <h1>Welcome to Cibara Comforts</h1>
+        <p>Your Luxurious Home Away From Home in Harihar</p>
+        <div class="cta-buttons">
+          <a href="#rooms" class="button">
+            <i class="fas fa-bed"></i>
+            Explore Rooms
+          </a>
+          <a href="#booking" class="button button-secondary">
+            <i class="fas fa-calendar-alt"></i>
+            Book Now
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Rooms Section -->
+    <section id="rooms" class="rooms-section">
+      <h2>Our Premium Rooms</h2>
+      <div class="room-cards">
+        <!-- Premium Room -->
+        <div class="room-card" data-room-type="premium">
+          <div class="room-badge">Most Popular</div>
+          <div class="image-slider">
+            <img
+              src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80"
+              alt="Premium Room"
+              class="active"
+            />
+            <img
+              src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2126&q=80"
+              alt="Premium Room"
+            />
+          </div>
+          <div class="room-info">
+            <h3>Premium Room</h3>
+            <p>
+              Luxurious accommodation with premium amenities and stunning views.
+              Perfect for a comfortable and memorable stay.
+            </p>
+            <div class="room-features">
+              <span class="feature-tag">AC Available</span>
+              <span class="feature-tag">Premium Bedding</span>
+              <span class="feature-tag">City View</span>
+            </div>
+            <div class="room-pricing">
+              <div class="price-info">
+                <div class="price-from">Starting from</div>
+                <div class="price-main">₹800</div>
+              </div>
+              <button class="book-room-btn" onclick="bookRoom('premium')">
+                Book Room
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Double Room -->
+        <div class="room-card" data-room-type="double">
+          <div class="image-slider">
+            <img
+              src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80"
+              alt="Double Room"
+              class="active"
+            />
+            <img
+              src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2158&q=80"
+              alt="Double Room"
+            />
+          </div>
+          <div class="room-info">
+            <h3>Double Room</h3>
+            <p>
+              Comfortable accommodation ideal for couples or friends. Spacious
+              and well-appointed with modern amenities.
+            </p>
+            <div class="room-features">
+              <span class="feature-tag">Queen Bed</span>
+              <span class="feature-tag">En-suite Bathroom</span>
+              <span class="feature-tag">Work Desk</span>
+            </div>
+            <div class="room-pricing">
+              <div class="price-info">
+                <div class="price-from">Starting from</div>
+                <div class="price-main">₹600</div>
+              </div>
+              <button class="book-room-btn" onclick="bookRoom('double')">
+                Book Room
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Single Room -->
+        <div class="room-card" data-room-type="single">
+          <div class="image-slider">
+            <img
+              src="https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2065&q=80"
+              alt="Single Room"
+              class="active"
+            />
+            <img
+              src="https://images.unsplash.com/photo-1617098900591-3f90928e8c54?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+              alt="Single Room"
+            />
+          </div>
+          <div class="room-info">
+            <h3>Single Room</h3>
+            <p>
+              Perfect for solo travelers seeking comfort and privacy. Cozy room
+              with all essential amenities for a pleasant stay.
+            </p>
+            <div class="room-features">
+              <span class="feature-tag">Single Bed</span>
+              <span class="feature-tag">Reading Area</span>
+              <span class="feature-tag">Compact Design</span>
+            </div>
+            <div class="room-pricing">
+              <div class="price-info">
+                <div class="price-from">Starting from</div>
+                <div class="price-main">₹550</div>
+              </div>
+              <button class="book-room-btn" onclick="bookRoom('single')">
+                Book Room
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dorms -->
+        <div class="room-card" data-room-type="dorms">
+          <div class="room-badge">Budget Friendly</div>
+          <div class="image-slider">
+            <img
+              src="https://images.unsplash.com/photo-1555854877-bab0e6fb0fdc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80"
+              alt="Dorm"
+              class="active"
+            />
+            <img
+              src="https://images.unsplash.com/photo-1586105251261-72a756497a11?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2058&q=80"
+              alt="Dorm"
+            />
+          </div>
+          <div class="room-info">
+            <h3>Dorms</h3>
+            <p>
+              Affordable shared accommodation perfect for backpackers and budget
+              travelers. Clean, safe, and social environment.
+            </p>
+            <div class="room-features">
+              <span class="feature-tag">Shared Room</span>
+              <span class="feature-tag">Lockers</span>
+              <span class="feature-tag">Common Area</span>
+            </div>
+            <div class="room-pricing">
+              <div class="price-info">
+                <div class="price-from">Starting from</div>
+                <div class="price-main">₹300</div>
+              </div>
+              <button class="book-room-btn" onclick="bookRoom('dorms')">
+                Book Room
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Special Offers Section -->
+    <section class="offers-section">
+      <h2>Special Offers</h2>
+      <div class="offers-container">
+        <div class="offer-card">
+          <h3>🎉 Weekly Stay Discount</h3>
+          <p>
+            Book for 7 nights or more and get 15% off on your total bill.
+            Perfect for extended business trips or long vacations!
+          </p>
+        </div>
+        <div class="offer-card">
+          <h3>👥 Group Booking</h3>
+          <p>
+            Booking for 3+ rooms? Get special group rates and complimentary
+            breakfast for all guests. Contact us for custom packages!
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Booking Section -->
+    <section id="booking" class="booking-section">
+      <h2>Book Your Perfect Stay</h2>
+      <div class="booking-container">
+        <form class="booking-form" id="bookingForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="checkin">Check-in Date</label>
+              <input type="date" id="checkin" required />
+            </div>
+            <div class="form-group">
+              <label for="checkout">Check-out Date</label>
+              <input type="date" id="checkout" required />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="roomType">Room Type</label>
+              <select id="roomType" required>
+                <option value="">Select Room Type</option>
+                <option value="premium">Premium Room</option>
+                <option value="double">Double Room</option>
+                <option value="single">Single Room</option>
+                <option value="dorms">Dorms</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="guests">Number of Guests</label>
+              <select id="guests" required>
+                <option value="">Select Guests</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="guest-info">
+            <h4>Guest Information</h4>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="guestName">Full Name</label>
+                <input
+                  type="text"
+                  id="guestName"
+                  placeholder="Enter your full name"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="guestPhone">Phone Number</label>
+                <input
+                  type="tel"
+                  id="guestPhone"
+                  placeholder="Enter your phone number"
+                  required
+                />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="guestEmail">Email Address (Optional)</label>
+              <input
+                type="email"
+                id="guestEmail"
+                placeholder="Enter your email"
+              />
+            </div>
+            <div class="form-group">
+              <label for="specialRequests">Special Requests (Optional)</label>
+              <textarea
+                id="specialRequests"
+                placeholder="Any special requirements or requests..."
+              ></textarea>
+            </div>
+          </div>
+
+          <div id="acOptions" class="ac-option" style="display: none">
+            <div class="form-group">
+              <label for="acPreference">AC Preference</label>
+              <select id="acPreference">
+                <option value="without">Without AC</option>
+                <option value="with">With AC (+₹400/night)</option>
+              </select>
+              <small
+                style="color: var(--gray); margin-top: 5px; display: block"
+              >
+                AC charges are additional to the room rate
+              </small>
+            </div>
+          </div>
+
+          <div class="booking-summary" id="bookingSummary">
+            <h4>Booking Summary</h4>
+            <div class="summary-row">
+              <span>Guest Name:</span>
+              <span id="summaryName">-</span>
+            </div>
+            <div class="summary-row">
+              <span>Room Type:</span>
+              <span id="selectedRoom">-</span>
+            </div>
+            <div class="summary-row">
+              <span>Dates:</span>
+              <span id="selectedDates">-</span>
+            </div>
+            <div class="summary-row">
+              <span>Nights:</span>
+              <span id="totalNights">-</span>
+            </div>
+            <div class="summary-row">
+              <span>Guests:</span>
+              <span id="selectedGuests">-</span>
+            </div>
+            <div class="summary-row" id="acSummary" style="display: none">
+              <span>AC:</span>
+              <span id="acStatus">-</span>
+            </div>
+            <div class="summary-row">
+              <span>Base Price:</span>
+              <span id="basePrice">₹0</span>
+            </div>
+            <div class="summary-row" id="acPriceSummary" style="display: none">
+              <span>AC Charges:</span>
+              <span id="acPrice">₹0</span>
+            </div>
+            <div class="summary-row total">
+              <span>Total Amount:</span>
+              <span id="totalPrice">₹0</span>
+            </div>
+          </div>
+
+          <div class="success-message" id="successMessage">
+            🎉 Booking request sent successfully! We'll contact you within 30
+            minutes to confirm.
+          </div>
+
+          <button type="submit" class="book-button" id="bookButton" disabled>
+            <i class="fab fa-whatsapp"></i>
+            Send Booking Request
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Modal -->
+    <div id="roomModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeRoomModal()">&times;</span>
+        <div class="modal-slider">
+          <button class="arrow left" onclick="changeImage(-1)">&#10094;</button>
+          <img id="modalImage" src="" alt="Room Image" />
+          <button class="arrow right" onclick="changeImage(1)">&#10095;</button>
+        </div>
+        <div class="modal-details">
+          <h2 id="modalTitle">Room Title</h2>
+          <div class="modal-pricing">
+            <h3>Pricing Options</h3>
+            <div class="pricing-grid" id="modalPricing"></div>
+          </div>
+          <div class="modal-amenities">
+            <h3>Amenities Included</h3>
+            <ul id="amenitiesList"></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Amenities Section -->
+    <section id="amenities" class="amenities">
+      <h2>Premium Amenities</h2>
+      <div class="amenities-list">
+        <div class="amenity-item">
+          <i class="fas fa-wifi"></i>
+          <span>Free High-Speed WiFi</span>
+        </div>
+        <div class="amenity-item">
+          <i class="fas fa-parking"></i>
+          <span>Free Parking</span>
+        </div>
+        <div class="amenity-item">
+          <i class="fas fa-users"></i>
+          <span>Common Area</span>
+        </div>
+        <div class="amenity-item">
+          <i class="fas fa-clock"></i>
+          <span>24/7 Reception</span>
+        </div>
+        <div class="amenity-item">
+          <i class="fas fa-video"></i>
+          <span>CCTV Security</span>
+        </div>
+        <div class="amenity-item">
+          <i class="fas fa-bolt"></i>
+          <span>Power Backup</span>
+        </div>
+        <div class="amenity-item">
+          <i class="fas fa-tint"></i>
+          <span>Water Dispenser</span>
+        </div>
+        <div class="amenity-item">
+          <i class="fas fa-paw"></i>
+          <span>Pet Friendly</span>
+        </div>
+        <div class="amenity-item">
+          <i class="fas fa-tshirt"></i>
+          <span>Laundry Service</span>
+        </div>
+        <div class="amenity-item">
+          <i class="fas fa-broom"></i>
+          <span>House Keeping</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Location Section -->
+    <section id="location" class="location-section">
+      <h2>Our Location</h2>
+      <div class="location-content">
+        <div class="map-container">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3650.490516777112!2d75.80639651519604!3d14.513619789829144!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bba29578bb58cbd%3A0xdb51c13a9cee9efb!2sCibara%20Comforts%20%7C%7C%20Hotel%20%7C%7C%20Lodge%20Harihar!5e0!3m2!1sen!2sin!4v1699047106423!5m2!1sen!2sin"
+            width="100%"
+            height="100%"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+          ></iframe>
+        </div>
+        <div class="proximity-info">
+          <h3>Proximity Highlights</h3>
+          <div class="info-box">
+            <h4>
+              <i class="fas fa-plane"></i>
+              Airport
+            </h4>
+            <p>Shimoga Airport - 87 km away</p>
+          </div>
+          <div class="info-box">
+            <h4>
+              <i class="fas fa-train"></i>
+              Railway Station
+            </h4>
+            <p>800 meters away</p>
+          </div>
+          <div class="info-box">
+            <h4>
+              <i class="fas fa-bus"></i>
+              Bus Stand
+            </h4>
+            <p>750 meters away</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+      <div class="contact-container">
+        <h2>Contact Us</h2>
+        <p>
+          We're here to make your stay exceptional. Contact us 24/7 for any
+          assistance or special requests!
+        </p>
+
+        <div class="contact-info">
+          <div class="contact-card">
+            <i class="fas fa-phone"></i>
+            <h4>Call Us</h4>
+            <p>
+              <a href="tel:+916361800647">+91 6361800647</a><br />
+              <a href="tel:08192297384">08192-297384</a>
+            </p>
+          </div>
+
+          <div class="contact-card">
+            <i class="fab fa-whatsapp"></i>
+            <h4>WhatsApp</h4>
+            <p>
+              <a href="https://wa.me/916361800647">+91 6361800647</a><br />
+              <small>Quick Response</small>
+            </p>
+          </div>
+
+          <div class="contact-card">
+            <i class="fas fa-envelope"></i>
+            <h4>Email</h4>
+            <p>
+              <a href="mailto:cibaracomforts@gmail.com"
+                >cibaracomforts@gmail.com</a
+              ><br />
+              <small>24-48 hours response</small>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq-section">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-container">
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFAQ(this)">
+            What are the check-in and check-out times?
+            <i class="fas fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <p>
+              Check-in is at 12:00 PM and check-out is at 11:00 AM. Early
+              check-in or late check-out may be available upon request and
+              availability.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFAQ(this)">
+            Is parking available?
+            <i class="fas fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <p>
+              Yes, we provide free parking for all our guests. Our parking area
+              is secure and well-lit for your convenience.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFAQ(this)">
+            Do you allow pets?
+            <i class="fas fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <p>
+              Yes, we are pet-friendly! Please inform us in advance when booking
+              so we can prepare accordingly. Additional cleaning charges may
+              apply.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFAQ(this)">
+            What payment methods do you accept?
+            <i class="fas fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <p>
+              We accept cash, UPI payments, credit/debit cards, and online bank
+              transfers. Payment can be made at check-in or through advance
+              booking.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFAQ(this)">
+            Is WiFi available in all rooms?
+            <i class="fas fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <p>
+              Yes, high-speed WiFi is complimentary and available throughout the
+              property including all rooms and common areas.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WhatsApp Float Button -->
+    <a
+      href="https://wa.me/916361800647"
+      class="whatsapp-float"
+      title="Chat with us on WhatsApp"
+    >
+      <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Testimonials Section -->
+    <section id="reviews" class="testimonial-section">
+      <h2>Guest Reviews</h2>
+      <div class="testimonial-slider">
+        <div class="testimonial active">
+          <p>
+            "The stay was absolutely delightful! The rooms were clean and the
+            staff was friendly. Highly recommend Cibara Comforts!"
+          </p>
+          <div class="stars">★★★★★</div>
+          <h4>— Neeraj Ladwa</h4>
+        </div>
+        <div class="testimonial">
+          <p>
+            "Near to the KSRTC gate. Prices are affordable, rooms are maintained
+            very clean and room service is also available. Staff receives
+            customers very politely. Finally, my suggestion is to book rooms at
+            Cibara."
+          </p>
+          <div class="stars">★★★★☆</div>
+          <h4>— Vangala Bhuvan Sai</h4>
+        </div>
+        <div class="testimonial">
+          <p>
+            "Affordable and well-maintained hotel in Harihar. Stayed with my
+            family for a day. Staff and owner were very friendly. Services are
+            above expectations."
+          </p>
+          <div class="stars">★★★★★</div>
+          <h4>— Zeeshan Sk</h4>
+        </div>
+        <div class="testimonial">
+          <p>
+            "Well-maintained rooms, staff behave friendly and WiFi is also
+            available in this lodge. Great value for money!"
+          </p>
+          <div class="stars">★★★★★</div>
+          <h4>— Shashidar K</h4>
+        </div>
+        <div class="testimonial">
+          <p>
+            "Good rooms and best lodge in Harihar city with free WiFi and hot
+            water. Very budget-friendly with excellent service."
+          </p>
+          <div class="stars">★★★★★</div>
+          <h4>— Farha Naaz</h4>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-content">
+        <div class="footer-links">
+          <a href="#home">Home</a>
+          <a href="#rooms">Rooms</a>
+          <a href="#booking">Booking</a>
+          <a href="#contact">Contact</a>
+          <a href="#faq">FAQ</a>
+        </div>
+        <p>
+          &copy; 2024 Cibara Comforts. All rights reserved. | Designed with ❤️
+          for your comfort
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      // Room data with pricing
+      const roomData = {
+        premium: {
+          name: "Premium Room",
+          images: [
+            "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80",
+            "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2126&q=80",
+          ],
+          pricing: {
+            1: { without: 800, with: 1200 },
+            2: { without: 1200, with: 1600 },
+            3: { without: 1500, with: 1900 },
+            4: { without: 1800, with: 2200 },
+          },
+          amenities: [
+            "Free WiFi",
+            "Premium Bedding",
+            "AC Available",
+            "Free Toiletries",
+            "Flat-screen TV",
+            "Ceiling Fan",
+            "House Keeping",
+            "Bedside Lamp",
+            "Fresh Linen",
+            "City View",
+          ],
+        },
+        double: {
+          name: "Double Room",
+          images: [
+            "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80",
+            "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2158&q=80",
+          ],
+          pricing: {
+            1: { without: 600, with: 600 },
+            2: { without: 800, with: 800 },
+            3: { without: 1000, with: 1000 },
+            4: { without: 1200, with: 1200 },
+          },
+          amenities: [
+            "Free WiFi",
+            "Queen Bed",
+            "Room Service",
+            "Free Toiletries",
+            "Ceiling Fan",
+            "House Keeping",
+            "Work Desk",
+            "En-suite Bathroom",
+          ],
+        },
+        single: {
+          name: "Single Room",
+          images: [
+            "https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2065&q=80",
+            "https://images.unsplash.com/photo-1617098900591-3f90928e8c54?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+          ],
+          pricing: {
+            1: { without: 550, with: 550 },
+          },
+          amenities: [
+            "Free WiFi",
+            "Single Bed",
+            "Room Service",
+            "Free Toiletries",
+            "House Keeping",
+            "Reading Area",
+            "Compact Design",
+          ],
+        },
+        dorms: {
+          name: "Dorms",
+          images: [
+            "https://images.unsplash.com/photo-1555854877-bab0e6fb0fdc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80",
+            "https://images.unsplash.com/photo-1586105251261-72a756497a11?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2058&q=80",
+          ],
+          pricing: {
+            1: { without: 300, with: 300 },
+          },
+          amenities: [
+            "Free WiFi",
+            "Shared Room",
+            "Private Lockers",
+            "Hot Water",
+            "Drinking Water",
+            "Common Area",
+            "Social Environment",
+          ],
+        },
+      };
+
+      // DOM Elements
+      const checkinInput = document.getElementById("checkin");
+      const checkoutInput = document.getElementById("checkout");
+      const roomTypeSelect = document.getElementById("roomType");
+      const guestsSelect = document.getElementById("guests");
+      const guestNameInput = document.getElementById("guestName");
+      const guestPhoneInput = document.getElementById("guestPhone");
+      const guestEmailInput = document.getElementById("guestEmail");
+      const specialRequestsInput = document.getElementById("specialRequests");
+      const acOptionsDiv = document.getElementById("acOptions");
+      const acPreferenceSelect = document.getElementById("acPreference");
+      const bookingSummary = document.getElementById("bookingSummary");
+      const bookButton = document.getElementById("bookButton");
+      const successMessage = document.getElementById("successMessage");
+      const bookingForm = document.getElementById("bookingForm");
+
+      // Set minimum date to today
+      const today = new Date().toISOString().split("T")[0];
+      checkinInput.min = today;
+      checkoutInput.min = today;
+
+      // Book room function (called from room cards)
+      function bookRoom(roomType) {
+        // Pre-select room type
+        roomTypeSelect.value = roomType;
+        handleRoomTypeChange();
+
+        // Scroll to booking section
+        document.getElementById("booking").scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+
+        // Add highlight effect
+        const bookingSection = document.getElementById("booking");
+        bookingSection.style.background =
+          "linear-gradient(135deg, #ffc136 0%, #ffe082 100%)";
+        setTimeout(() => {
+          bookingSection.style.background = "";
+        }, 2000);
+      }
+
+      // Event listeners
+      checkinInput.addEventListener("change", () => {
+        const checkinDate = new Date(checkinInput.value);
+        checkinDate.setDate(checkinDate.getDate() + 1);
+        checkoutInput.min = checkinDate.toISOString().split("T")[0];
+        if (
+          checkoutInput.value &&
+          new Date(checkoutInput.value) <= new Date(checkinInput.value)
+        ) {
+          checkoutInput.value = "";
+        }
+        updateBookingSummary();
+      });
+
+      checkoutInput.addEventListener("change", updateBookingSummary);
+      roomTypeSelect.addEventListener("change", handleRoomTypeChange);
+      guestsSelect.addEventListener("change", updateBookingSummary);
+      acPreferenceSelect.addEventListener("change", updateBookingSummary);
+      guestNameInput.addEventListener("input", updateBookingSummary);
+      guestPhoneInput.addEventListener("input", updateBookingSummary);
+
+      function handleRoomTypeChange() {
+        const roomType = roomTypeSelect.value;
+
+        // Show/hide AC options for premium rooms
+        if (roomType === "premium") {
+          acOptionsDiv.style.display = "block";
+        } else {
+          acOptionsDiv.style.display = "none";
+          acPreferenceSelect.value = "without";
+        }
+
+        // Update guest options based on room type
+        updateGuestOptions(roomType);
+        updateBookingSummary();
+      }
+
+      function updateGuestOptions(roomType) {
+        guestsSelect.innerHTML = '<option value="">Select Guests</option>';
+
+        if (roomType && roomData[roomType]) {
+          const availableGuests = Object.keys(roomData[roomType].pricing);
+          availableGuests.forEach((guestCount) => {
+            const option = document.createElement("option");
+            option.value = guestCount;
+            option.textContent = `${guestCount} Guest${
+              guestCount > 1 ? "s" : ""
+            }`;
+            guestsSelect.appendChild(option);
+          });
+        }
+      }
+
+      function updateBookingSummary() {
+        const checkin = checkinInput.value;
+        const checkout = checkoutInput.value;
+        const roomType = roomTypeSelect.value;
+        const guests = parseInt(guestsSelect.value);
+        const acPreference = acPreferenceSelect.value;
+        const guestName = guestNameInput.value.trim();
+        const guestPhone = guestPhoneInput.value.trim();
+
+        // Check if required fields are filled
+        const requiredFieldsFilled =
+          checkin && checkout && roomType && guests && guestName && guestPhone;
+
+        if (!requiredFieldsFilled) {
+          bookingSummary.style.display = "none";
+          bookButton.disabled = true;
+          return;
+        }
+
+        // Calculate nights
+        const checkinDate = new Date(checkin);
+        const checkoutDate = new Date(checkout);
+        const nights = Math.ceil(
+          (checkoutDate - checkinDate) / (1000 * 60 * 60 * 24)
+        );
+
+        if (nights <= 0) {
+          bookingSummary.style.display = "none";
+          bookButton.disabled = true;
+          return;
+        }
+
+        const room = roomData[roomType];
+        const baseRate = room.pricing[guests]
+          ? room.pricing[guests][acPreference]
+          : 0;
+
+        if (baseRate === 0) {
+          bookingSummary.style.display = "none";
+          bookButton.disabled = true;
+          return;
+        }
+
+        // Calculate prices
+        let acCharges = 0;
+        if (roomType === "premium" && acPreference === "with") {
+          acCharges = 400 * nights;
+        }
+
+        const basePrice = baseRate * nights;
+        const totalPrice = basePrice;
+
+        // Update summary display
+        document.getElementById("summaryName").textContent = guestName;
+        document.getElementById("selectedRoom").textContent = room.name;
+        document.getElementById("selectedDates").textContent = `${formatDate(
+          checkin
+        )} - ${formatDate(checkout)}`;
+        document.getElementById("totalNights").textContent = `${nights} night${
+          nights > 1 ? "s" : ""
+        }`;
+        document.getElementById(
+          "selectedGuests"
+        ).textContent = `${guests} guest${guests > 1 ? "s" : ""}`;
+        document.getElementById(
+          "basePrice"
+        ).textContent = `₹${basePrice.toLocaleString()}`;
+        document.getElementById(
+          "totalPrice"
+        ).textContent = `₹${totalPrice.toLocaleString()}`;
+
+        // Handle AC summary display
+        if (roomType === "premium") {
+          document.getElementById("acSummary").style.display = "flex";
+          document.getElementById("acStatus").textContent =
+            acPreference === "with" ? "With AC (+₹400/night)" : "Without AC";
+
+          if (acPreference === "with") {
+            document.getElementById("acPriceSummary").style.display = "flex";
+            document.getElementById(
+              "acPrice"
+            ).textContent = `₹${acCharges.toLocaleString()}`;
+          } else {
+            document.getElementById("acPriceSummary").style.display = "none";
+          }
+        } else {
+          document.getElementById("acSummary").style.display = "none";
+          document.getElementById("acPriceSummary").style.display = "none";
+        }
+
+        bookingSummary.style.display = "block";
+        bookButton.disabled = false;
+      }
+
+      function formatDate(dateString) {
+        const date = new Date(dateString);
+        return date.toLocaleDateString("en-US", {
+          month: "short",
+          day: "numeric",
+          year: "numeric",
+        });
+      }
+
+      // Form submission
+      bookingForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        const checkin = checkinInput.value;
+        const checkout = checkoutInput.value;
+        const roomType = roomTypeSelect.value;
+        const guests = parseInt(guestsSelect.value);
+        const acPreference = acPreferenceSelect.value;
+        const guestName = guestNameInput.value.trim();
+        const guestPhone = guestPhoneInput.value.trim();
+        const guestEmail = guestEmailInput.value.trim();
+        const specialRequests = specialRequestsInput.value.trim();
+
+        const room = roomData[roomType];
+        const checkinDate = new Date(checkin);
+        const checkoutDate = new Date(checkout);
+        const nights = Math.ceil(
+          (checkoutDate - checkinDate) / (1000 * 60 * 60 * 24)
+        );
+        const baseRate = room.pricing[guests][acPreference];
+        const totalPrice = baseRate * nights;
+
+        // Create WhatsApp message
+        let message = `🏨 *CIBARA COMFORTS BOOKING REQUEST*\n\n`;
+        message += `👤 *Guest Details:*\n`;
+        message += `Name: ${guestName}\n`;
+        message += `Phone: ${guestPhone}\n`;
+        if (guestEmail) {
+          message += `Email: ${guestEmail}\n`;
+        }
+        message += `\n📅 *Booking Details:*\n`;
+        message += `Check-in: ${formatDate(checkin)}\n`;
+        message += `Check-out: ${formatDate(checkout)}\n`;
+        message += `Room Type: ${room.name}\n`;
+        message += `Guests: ${guests}\n`;
+        message += `Nights: ${nights}\n`;
+
+        if (roomType === "premium") {
+          message += `AC: ${
+            acPreference === "with" ? "With AC" : "Without AC"
+          }\n`;
+        }
+
+        message += `\n💰 *Total Amount: ₹${totalPrice.toLocaleString()}*\n\n`;
+
+        if (specialRequests) {
+          message += `📝 *Special Requests:*\n${specialRequests}\n\n`;
+        }
+
+        message += `✅ Please confirm availability and booking details.`;
+
+        // Create WhatsApp URL with proper encoding
+        const whatsappNumber = "916361800647";
+        const encodedMessage = encodeURIComponent(message);
+        const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+
+        // Show success message
+        successMessage.classList.add("show");
+        setTimeout(() => {
+          successMessage.classList.remove("show");
+        }, 5000);
+
+        // Open WhatsApp
+        window.open(whatsappURL, "_blank");
+      });
+
+      // Enhanced room image slider
+      document.querySelectorAll(".image-slider").forEach((slider) => {
+        let currentImage = 0;
+        const images = slider.querySelectorAll("img");
+
+        if (images.length > 1) {
+          const changeImage = () => {
+            images[currentImage].classList.remove("active");
+            currentImage = (currentImage + 1) % images.length;
+            images[currentImage].classList.add("active");
+          };
+
+          setInterval(changeImage, 4000);
+        }
+      });
+
+      // Modal functionality
+      let currentImageIndex = 0;
+      let currentRoomType = "";
+      const modal = document.getElementById("roomModal");
+
+      function openRoomModal(roomType) {
+        const room = roomData[roomType];
+        const modalImage = document.getElementById("modalImage");
+        const modalTitle = document.getElementById("modalTitle");
+        const amenitiesList = document.getElementById("amenitiesList");
+        const modalPricing = document.getElementById("modalPricing");
+
+        currentRoomType = roomType;
+        currentImageIndex = 0;
+
+        modalTitle.textContent = room.name;
+        modalImage.src = room.images[currentImageIndex];
+
+        // Update pricing options
+        modalPricing.innerHTML = "";
+        Object.entries(room.pricing).forEach(([guests, prices]) => {
+          const option = document.createElement("div");
+          option.className = "pricing-option";
+
+          if (roomType === "premium") {
+            option.innerHTML = `
+        <div class="guests">${guests} Guest${guests > 1 ? "s" : ""}</div>
+        <div class="price">₹${prices.without}/night</div>
+        <div style="font-size: 0.8rem; color: var(--gray); margin-top: 5px;">AC: +₹${
+          prices.with - prices.without
+        }</div>
+      `;
+          } else {
+            option.innerHTML = `
+        <div class="guests">${guests} Guest${guests > 1 ? "s" : ""}</div>
+        <div class="price">₹${prices.without}/night</div>
+      `;
+          }
+          modalPricing.appendChild(option);
+        });
+
+        // Update amenities
+        amenitiesList.innerHTML = room.amenities
+          .map((amenity) => `<li>${amenity}</li>`)
+          .join("");
+
+        modal.style.display = "flex";
+        setTimeout(() => {
+          modal.classList.add("show");
+        }, 10);
+      }
+
+      function closeRoomModal() {
+        modal.classList.remove("show");
+        setTimeout(() => {
+          modal.style.display = "none";
+        }, 300);
+      }
+
+      function changeImage(direction) {
+        const modalImage = document.getElementById("modalImage");
+        const room = roomData[currentRoomType];
+
+        modalImage.style.opacity = 0;
+
+        setTimeout(() => {
+          currentImageIndex =
+            (currentImageIndex + direction + room.images.length) %
+            room.images.length;
+          modalImage.src = room.images[currentImageIndex];
+          modalImage.style.opacity = 1;
+        }, 300);
+      }
+
+      // Add click event listeners to room cards (for modal)
+      document.querySelectorAll(".room-card").forEach((card) => {
+        card.addEventListener("click", (e) => {
+          // Don't open modal if book button was clicked
+          if (e.target.classList.contains("book-room-btn")) {
+            return;
+          }
+          const roomType = card.getAttribute("data-room-type");
+          openRoomModal(roomType);
+        });
+      });
+
+      // Close modal when clicking outside
+      window.addEventListener("click", (e) => {
+        if (e.target === modal) {
+          closeRoomModal();
+        }
+      });
+
+      // FAQ functionality
+      function toggleFAQ(button) {
+        const answer = button.nextElementSibling;
+        const icon = button.querySelector("i");
+
+        // Close all other FAQs
+        document.querySelectorAll(".faq-answer").forEach((otherAnswer) => {
+          if (otherAnswer !== answer) {
+            otherAnswer.classList.remove("show");
+            otherAnswer.previousElementSibling.querySelector(
+              "i"
+            ).style.transform = "rotate(0deg)";
+          }
+        });
+
+        // Toggle current FAQ
+        answer.classList.toggle("show");
+
+        if (answer.classList.contains("show")) {
+          icon.style.transform = "rotate(180deg)";
+        } else {
+          icon.style.transform = "rotate(0deg)";
+        }
+      }
+
+      // Hero carousel
+      let slideIndex = 0;
+      const slides = document.getElementsByClassName("carousel-slide");
+
+      function showSlides() {
+        for (let i = 0; i < slides.length; i++) {
+          slides[i].classList.remove("active");
+        }
+
+        slideIndex++;
+        if (slideIndex > slides.length) {
+          slideIndex = 1;
+        }
+
+        slides[slideIndex - 1].classList.add("active");
+        setTimeout(showSlides, 6000);
+      }
+
+      // Initialize carousel
+      if (slides.length > 0) {
+        setTimeout(showSlides, 6000);
+      }
+
+      // Smooth scrolling for navigation links
+      document.querySelectorAll('nav a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const targetId = this.getAttribute("href");
+          const targetElement = document.querySelector(targetId);
+
+          if (targetElement) {
+            window.scrollTo({
+              top: targetElement.offsetTop - 80,
+              behavior: "smooth",
+            });
+
+            // Close mobile menu if open
+            const navLinks = document.querySelector("nav ul");
+            const hamburger = document.getElementById("hamburger");
+            if (navLinks.classList.contains("active")) {
+              navLinks.classList.remove("active");
+              hamburger.classList.remove("active");
+            }
+          }
+        });
+      });
+
+      // Dynamic header on scroll
+      const header = document.querySelector("header");
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 50) {
+          header.classList.add("scrolled");
+        } else {
+          header.classList.remove("scrolled");
+        }
+      });
+
+      // Hamburger menu
+      const hamburger = document.getElementById("hamburger");
+      const navLinks = document.querySelector("nav ul");
+
+      hamburger?.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+        hamburger.classList.toggle("active");
+      });
+
+      // Testimonials slider
+      document.addEventListener("DOMContentLoaded", () => {
+        const testimonials = document.querySelectorAll(".testimonial");
+        if (testimonials.length > 0) {
+          let currentIndex = 0;
+
+          setInterval(() => {
+            testimonials[currentIndex].classList.remove("active");
+            currentIndex = (currentIndex + 1) % testimonials.length;
+            testimonials[currentIndex].classList.add("active");
+          }, 6000);
+        }
+      });
+
+      // Animation on scroll
+      const animateOnScroll = () => {
+        const elements = document.querySelectorAll(
+          ".room-card, .amenity-item, .info-box, .offer-card, .faq-item"
+        );
+
+        elements.forEach((element) => {
+          const elementPosition = element.getBoundingClientRect().top;
+          const screenPosition = window.innerHeight / 1.2;
+
+          if (elementPosition < screenPosition) {
+            element.style.opacity = "1";
+            element.style.transform = "translateY(0)";
+          }
+        });
+      };
+
+      // Initialize animations
+      document.addEventListener("DOMContentLoaded", () => {
+        const elements = document.querySelectorAll(
+          ".room-card, .amenity-item, .info-box, .offer-card, .faq-item"
+        );
+        elements.forEach((element) => {
+          element.style.opacity = "0";
+          element.style.transform = "translateY(40px)";
+          element.style.transition = "opacity 0.6s ease, transform 0.6s ease";
+        });
+
+        animateOnScroll();
+        window.addEventListener("scroll", animateOnScroll);
+      });
+    </script>
+  </body>
+</html>
