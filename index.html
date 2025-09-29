@@ -3,11 +3,113 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cibara Comforts - Lodge in Harihar</title>
+
+    <!-- Primary Meta Tags -->
+    <title>
+      Cibara Comforts - Best Lodge & Hotel in Harihar | Budget-Friendly
+      Accommodation
+    </title>
+    <meta
+      name="title"
+      content="Cibara Comforts - Best Lodge & Hotel in Harihar | Budget-Friendly Accommodation"
+    />
+    <meta
+      name="description"
+      content="Book affordable rooms at Cibara Comforts, Harihar's top-rated lodge. Premium rooms, AC options, free WiFi, parking. Near railway station & bus stand. Starting from ₹250/night."
+    />
+    <meta
+      name="keywords"
+      content="Cibara Comforts, Harihar lodge, Harihar hotel, budget hotel Harihar, affordable accommodation Harihar, rooms near Harihar railway station, Harihar bus stand lodge, AC rooms Harihar, Karnataka hotels"
+    />
+    <meta name="author" content="Cibara Comforts" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://cibaracomforts.com/" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://cibaracomforts.com/" />
+    <meta
+      property="og:title"
+      content="Cibara Comforts - Best Lodge & Hotel in Harihar"
+    />
+    <meta
+      property="og:description"
+      content="Book affordable rooms at Cibara Comforts, Harihar's top-rated lodge. Premium rooms, AC options, free WiFi, parking. Starting from ₹250/night."
+    />
+    <meta
+      property="og:image"
+      content="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1200&h=630&fit=crop"
+    />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://cibaracomforts.com/" />
+    <meta
+      property="twitter:title"
+      content="Cibara Comforts - Best Lodge & Hotel in Harihar"
+    />
+    <meta
+      property="twitter:description"
+      content="Book affordable rooms at Cibara Comforts, Harihar's top-rated lodge. Premium rooms, AC options, free WiFi, parking. Starting from ₹250/night."
+    />
+    <meta
+      property="twitter:image"
+      content="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1200&h=630&fit=crop"
+    />
+
+    <!-- Geo Tags -->
+    <meta name="geo.region" content="IN-KA" />
+    <meta name="geo.placename" content="Harihar, Karnataka" />
+    <meta name="geo.position" content="14.513619;75.806396" />
+    <meta name="ICBM" content="14.513619, 75.806396" />
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
     />
+
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Hotel",
+        "name": "Cibara Comforts",
+        "description": "Budget-friendly lodge and hotel in Harihar offering premium rooms, AC options, free WiFi, and parking near railway station and bus stand.",
+        "image": "https://images.unsplash.com/photo-1566073771259-6a8506099945",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Near KSRTC Bus Stand",
+          "addressLocality": "Harihar",
+          "addressRegion": "Karnataka",
+          "addressCountry": "IN"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "14.513619",
+          "longitude": "75.806396"
+        },
+        "telephone": "+91-6361800647",
+        "email": "cibaracomforts@gmail.com",
+        "priceRange": "₹250 - ₹2200",
+        "starRating": {
+          "@type": "Rating",
+          "ratingValue": "4.5",
+          "bestRating": "5"
+        },
+        "amenityFeature": [
+          { "@type": "LocationFeatureSpecification", "name": "Free WiFi" },
+          { "@type": "LocationFeatureSpecification", "name": "Free Parking" },
+          { "@type": "LocationFeatureSpecification", "name": "24/7 Reception" },
+          { "@type": "LocationFeatureSpecification", "name": "Pet Friendly" },
+          {
+            "@type": "LocationFeatureSpecification",
+            "name": "AC Rooms Available"
+          }
+        ],
+        "url": "https://cibaracomforts.com",
+        "sameAs": ["https://wa.me/916361800647"]
+      }
+    </script>
     <style>
       /* Modern CSS Reset */
       * {
@@ -445,17 +547,17 @@
         box-shadow: var(--shadow-lg);
       }
 
-      /* Special Offers Section */
+      /* Special Offers Section - Improved Alignment */
       .offers-section {
         background: var(--gradient);
         color: var(--white);
-        text-align: center;
-        padding: 60px 20px;
+        padding: 80px 20px;
       }
 
       .offers-section h2 {
         color: var(--white);
-        margin-bottom: 40px;
+        margin-bottom: 50px;
+        text-align: center;
       }
 
       .offers-section h2::after {
@@ -463,28 +565,44 @@
       }
 
       .offers-container {
-        max-width: 800px;
+        max-width: 1200px;
         margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
       }
 
       .offer-card {
         background: rgba(255, 255, 255, 0.1);
         backdrop-filter: blur(20px);
-        padding: 30px;
+        padding: 35px;
         border-radius: 20px;
         border: 1px solid rgba(255, 255, 255, 0.2);
-        margin-bottom: 20px;
+        text-align: center;
+        transition: var(--transition);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .offer-card:hover {
+        transform: translateY(-5px);
+        background: rgba(255, 255, 255, 0.15);
+        box-shadow: var(--shadow-lg);
       }
 
       .offer-card h3 {
         color: var(--secondary);
         margin-bottom: 15px;
-        font-size: 1.3rem;
+        font-size: 1.4rem;
+        font-weight: 600;
       }
 
       .offer-card p {
-        font-size: 0.95rem;
-        opacity: 0.9;
+        font-size: 1rem;
+        opacity: 0.95;
+        line-height: 1.7;
       }
 
       /* Minimalistic Booking Section */
@@ -505,6 +623,218 @@
       .booking-form {
         display: grid;
         gap: 20px;
+      }
+
+      /* Unified Date Range Selector - Booking.com Style */
+      .date-range-container {
+        background: var(--light);
+        padding: 25px;
+        border-radius: 15px;
+        margin-bottom: 20px;
+        position: relative;
+      }
+
+      .date-range-container h4 {
+        color: var(--primary);
+        margin-bottom: 20px;
+        font-size: 1.1rem;
+        text-align: center;
+      }
+
+      .date-picker-input {
+        width: 100%;
+        padding: 15px 20px;
+        border: 2px solid var(--light);
+        border-radius: 10px;
+        background: var(--white);
+        cursor: pointer;
+        transition: var(--transition);
+        font-size: 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .date-picker-input:hover {
+        border-color: var(--primary);
+        box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.1);
+      }
+
+      .date-picker-input.active {
+        border-color: var(--primary);
+        box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.15);
+      }
+
+      .date-display {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+        flex: 1;
+      }
+
+      .date-item {
+        flex: 1;
+      }
+
+      .date-label {
+        font-size: 0.8rem;
+        color: var(--gray);
+        margin-bottom: 5px;
+      }
+
+      .date-value {
+        font-weight: 600;
+        color: var(--primary);
+      }
+
+      .date-value.placeholder {
+        color: var(--gray);
+        font-weight: 400;
+      }
+
+      .date-separator {
+        color: var(--primary);
+        font-size: 1.2rem;
+      }
+
+      .calendar-icon {
+        color: var(--primary);
+        font-size: 1.2rem;
+      }
+
+      .date-picker-popup {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        margin-top: 10px;
+        background: var(--white);
+        border-radius: 15px;
+        box-shadow: var(--shadow-lg);
+        padding: 20px;
+        z-index: 100;
+        display: none;
+      }
+
+      .date-picker-popup.active {
+        display: block;
+      }
+
+      .calendar-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+        padding-bottom: 15px;
+        border-bottom: 2px solid var(--light);
+      }
+
+      .calendar-nav {
+        background: var(--light);
+        border: none;
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: var(--transition);
+        color: var(--primary);
+        font-size: 1.1rem;
+      }
+
+      .calendar-nav:hover {
+        background: var(--primary);
+        color: var(--white);
+      }
+
+      .calendar-month-year {
+        font-weight: 600;
+        color: var(--primary);
+        font-size: 1.1rem;
+      }
+
+      .calendar-grid {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        gap: 5px;
+      }
+
+      .calendar-day-header {
+        text-align: center;
+        font-weight: 600;
+        color: var(--gray);
+        padding: 10px 5px;
+        font-size: 0.85rem;
+      }
+
+      .calendar-day {
+        aspect-ratio: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: var(--transition);
+        font-weight: 500;
+        position: relative;
+      }
+
+      .calendar-day:not(.disabled):hover {
+        background: var(--light);
+      }
+
+      .calendar-day.disabled {
+        color: var(--gray);
+        opacity: 0.3;
+        cursor: not-allowed;
+      }
+
+      .calendar-day.other-month {
+        color: var(--gray);
+        opacity: 0.5;
+      }
+
+      .calendar-day.selected {
+        background: var(--primary);
+        color: var(--white);
+      }
+
+      .calendar-day.in-range {
+        background: rgba(30, 58, 138, 0.1);
+        color: var(--primary);
+      }
+
+      .calendar-day.start-date {
+        background: var(--primary);
+        color: var(--white);
+        border-radius: 8px 0 0 8px;
+      }
+
+      .calendar-day.end-date {
+        background: var(--primary);
+        color: var(--white);
+        border-radius: 0 8px 8px 0;
+      }
+
+      .calendar-day.start-date.end-date {
+        border-radius: 8px;
+      }
+
+      .nights-display {
+        text-align: center;
+        margin-top: 15px;
+        padding: 12px;
+        background: var(--success);
+        color: var(--white);
+        border-radius: 10px;
+        font-weight: 600;
+        font-size: 1.05rem;
+      }
+
+      .nights-display i {
+        margin-right: 8px;
       }
 
       .form-row {
@@ -994,55 +1324,78 @@
         color: var(--white);
       }
 
-      /* Contact Section - Fixed Alignment */
+      /* Contact Section - Improved Alignment */
       .contact-section {
         background-color: var(--white);
-        text-align: center;
         padding: 80px 20px;
       }
 
       .contact-container {
-        max-width: 800px;
+        max-width: 1200px;
         margin: 0 auto;
       }
 
-      .contact-section p {
+      .contact-section h2 {
+        text-align: center;
+      }
+
+      .contact-section > p {
         font-size: 1.1rem;
         color: var(--gray);
-        margin: 20px 0;
-        line-height: 1.6;
+        margin: 20px auto 40px;
+        line-height: 1.7;
+        text-align: center;
+        max-width: 700px;
       }
 
       .contact-info {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
         gap: 30px;
-        margin: 40px 0;
+        margin: 50px 0;
       }
 
       .contact-card {
         background: var(--light);
-        padding: 30px 20px;
+        padding: 35px 25px;
         border-radius: 15px;
         transition: var(--transition);
         box-shadow: var(--shadow);
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 200px;
       }
 
       .contact-card:hover {
-        transform: translateY(-5px);
+        transform: translateY(-8px);
         box-shadow: var(--shadow-lg);
+        background: linear-gradient(
+          135deg,
+          rgba(30, 58, 138, 0.05) 0%,
+          rgba(59, 91, 206, 0.05) 100%
+        );
       }
 
       .contact-card i {
-        font-size: 2.5rem;
+        font-size: 2.8rem;
         color: var(--primary);
-        margin-bottom: 15px;
+        margin-bottom: 20px;
+        transition: var(--transition);
+      }
+
+      .contact-card:hover i {
+        transform: scale(1.1);
+        color: var(--primary-light);
       }
 
       .contact-card h4 {
         color: var(--primary);
-        margin-bottom: 10px;
-        font-size: 1.2rem;
+        margin-bottom: 12px;
+        font-size: 1.3rem;
+        font-weight: 600;
       }
 
       .contact-card p,
@@ -1050,10 +1403,24 @@
         color: var(--gray);
         text-decoration: none;
         font-weight: 500;
+        font-size: 1rem;
+        line-height: 1.6;
+      }
+
+      .contact-card a {
+        transition: var(--transition);
       }
 
       .contact-card a:hover {
         color: var(--primary);
+      }
+
+      .contact-card small {
+        display: block;
+        margin-top: 8px;
+        font-size: 0.85rem;
+        color: var(--gray);
+        opacity: 0.8;
       }
 
       /* FAQ Section - New Feature */
@@ -1380,6 +1747,35 @@
         section h2 {
           font-size: 2rem;
         }
+
+        /* Date range mobile optimization */
+        .date-picker-popup {
+          left: -20px;
+          right: -20px;
+          max-height: 500px;
+          overflow-y: auto;
+        }
+
+        .calendar-grid {
+          gap: 3px;
+        }
+
+        .calendar-day {
+          font-size: 0.9rem;
+        }
+
+        .date-display {
+          flex-direction: column;
+          gap: 10px;
+        }
+
+        .date-separator {
+          display: none;
+        }
+
+        .offers-container {
+          grid-template-columns: 1fr;
+        }
       }
 
       @media (max-width: 576px) {
@@ -1504,15 +1900,8 @@
         <div class="room-card" data-room-type="premium">
           <div class="room-badge">Most Popular</div>
           <div class="image-slider">
-            <img
-              src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80"
-              alt="Premium Room"
-              class="active"
-            />
-            <img
-              src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2126&q=80"
-              alt="Premium Room"
-            />
+            <img src="images/Ac room.jpeg" alt="Premium Room" class="active" />
+            <img src="images/Ac room.jpeg" alt="Premium Room" />
           </div>
           <div class="room-info">
             <h3>Premium Room</h3>
@@ -1674,15 +2063,59 @@
       <h2>Book Your Perfect Stay</h2>
       <div class="booking-container">
         <form class="booking-form" id="bookingForm">
-          <div class="form-row">
-            <div class="form-group">
-              <label for="checkin">Check-in Date</label>
-              <input type="date" id="checkin" required />
+          <!-- Unified Date Range Selector - Booking.com Style -->
+          <div class="date-range-container">
+            <h4><i class="fas fa-calendar-alt"></i> Select Your Stay Dates</h4>
+            <div class="date-picker-input" id="datePickerInput">
+              <div class="date-display">
+                <div class="date-item">
+                  <div class="date-label">Check-In</div>
+                  <div class="date-value placeholder" id="checkinDisplay">
+                    Select date
+                  </div>
+                </div>
+                <div class="date-separator">
+                  <i class="fas fa-arrow-right"></i>
+                </div>
+                <div class="date-item">
+                  <div class="date-label">Check-Out</div>
+                  <div class="date-value placeholder" id="checkoutDisplay">
+                    Select date
+                  </div>
+                </div>
+              </div>
+              <div class="calendar-icon">
+                <i class="fas fa-calendar"></i>
+              </div>
             </div>
-            <div class="form-group">
-              <label for="checkout">Check-out Date</label>
-              <input type="date" id="checkout" required />
+
+            <div class="date-picker-popup" id="datePickerPopup">
+              <div class="calendar-header">
+                <button class="calendar-nav" id="prevMonth">
+                  <i class="fas fa-chevron-left"></i>
+                </button>
+                <div class="calendar-month-year" id="monthYear"></div>
+                <button class="calendar-nav" id="nextMonth">
+                  <i class="fas fa-chevron-right"></i>
+                </button>
+              </div>
+              <div class="calendar-grid" id="calendarGrid"></div>
             </div>
+
+            <div
+              class="nights-display"
+              id="nightsDisplay"
+              style="display: none"
+            >
+              <i class="fas fa-moon"></i>
+              <span id="nightsCount">0</span> Night<span id="nightsPlural"
+                >s</span
+              >
+            </div>
+
+            <!-- Hidden inputs for form submission -->
+            <input type="hidden" id="checkin" name="checkin" required />
+            <input type="hidden" id="checkout" name="checkout" required />
           </div>
 
           <div class="form-row">
@@ -2016,9 +2449,8 @@
           </button>
           <div class="faq-answer">
             <p>
-              We accept cash, UPI payments, credit/debit cards, and online bank
-              transfers. Payment can be made at check-in or through advance
-              booking.
+              We accept cash, UPI payments and online bank transfers. Payment
+              can be made at check-in or through advance booking.
             </p>
           </div>
         </div>
@@ -2150,9 +2582,9 @@
           ],
           pricing: {
             1: { without: 600, with: 600 },
-            2: { without: 800, with: 800 },
+            2: { without: 700, with: 700 },
             3: { without: 1000, with: 1000 },
-            4: { without: 1200, with: 1200 },
+            4: { without: 1300, with: 1300 },
           },
           amenities: [
             "Free WiFi",
@@ -2172,7 +2604,7 @@
             "https://images.unsplash.com/photo-1617098900591-3f90928e8c54?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
           ],
           pricing: {
-            1: { without: 550, with: 550 },
+            1: { without: 450, with: 450 },
           },
           amenities: [
             "Free WiFi",
@@ -2191,7 +2623,7 @@
             "https://images.unsplash.com/photo-1586105251261-72a756497a11?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2058&q=80",
           ],
           pricing: {
-            1: { without: 300, with: 300 },
+            1: { without: 250, with: 250 },
           },
           amenities: [
             "Free WiFi",
@@ -2208,6 +2640,18 @@
       // DOM Elements
       const checkinInput = document.getElementById("checkin");
       const checkoutInput = document.getElementById("checkout");
+      const checkinDisplay = document.getElementById("checkinDisplay");
+      const checkoutDisplay = document.getElementById("checkoutDisplay");
+      const datePickerInput = document.getElementById("datePickerInput");
+      const datePickerPopup = document.getElementById("datePickerPopup");
+      const calendarGrid = document.getElementById("calendarGrid");
+      const monthYear = document.getElementById("monthYear");
+      const prevMonth = document.getElementById("prevMonth");
+      const nextMonth = document.getElementById("nextMonth");
+      const nightsDisplay = document.getElementById("nightsDisplay");
+      const nightsCount = document.getElementById("nightsCount");
+      const nightsPlural = document.getElementById("nightsPlural");
+
       const roomTypeSelect = document.getElementById("roomType");
       const guestsSelect = document.getElementById("guests");
       const guestNameInput = document.getElementById("guestName");
@@ -2221,10 +2665,209 @@
       const successMessage = document.getElementById("successMessage");
       const bookingForm = document.getElementById("bookingForm");
 
-      // Set minimum date to today
-      const today = new Date().toISOString().split("T")[0];
-      checkinInput.min = today;
-      checkoutInput.min = today;
+      // Calendar state
+      let currentMonth = new Date().getMonth();
+      let currentYear = new Date().getFullYear();
+      let selectedCheckin = null;
+      let selectedCheckout = null;
+      let selectingCheckout = false;
+
+      // Date picker functionality
+      datePickerInput.addEventListener("click", () => {
+        datePickerPopup.classList.toggle("active");
+        datePickerInput.classList.toggle("active");
+        if (datePickerPopup.classList.contains("active")) {
+          renderCalendar();
+        }
+      });
+
+      // Close calendar when clicking outside
+      document.addEventListener("click", (e) => {
+        if (
+          !datePickerInput.contains(e.target) &&
+          !datePickerPopup.contains(e.target)
+        ) {
+          datePickerPopup.classList.remove("active");
+          datePickerInput.classList.remove("active");
+        }
+      });
+
+      prevMonth.addEventListener("click", (e) => {
+        e.stopPropagation();
+        currentMonth--;
+        if (currentMonth < 0) {
+          currentMonth = 11;
+          currentYear--;
+        }
+        renderCalendar();
+      });
+
+      nextMonth.addEventListener("click", (e) => {
+        e.stopPropagation();
+        currentMonth++;
+        if (currentMonth > 11) {
+          currentMonth = 0;
+          currentYear++;
+        }
+        renderCalendar();
+      });
+
+      function renderCalendar() {
+        const today = new Date();
+        today.setHours(0, 0, 0, 0);
+
+        const firstDay = new Date(currentYear, currentMonth, 1);
+        const lastDay = new Date(currentYear, currentMonth + 1, 0);
+        const prevLastDay = new Date(currentYear, currentMonth, 0);
+
+        const firstDayIndex = firstDay.getDay();
+        const lastDayIndex = lastDay.getDay();
+        const nextDays = 7 - lastDayIndex - 1;
+
+        monthYear.textContent = firstDay.toLocaleDateString("en-US", {
+          month: "long",
+          year: "numeric",
+        });
+
+        let days = "";
+
+        // Day headers
+        const dayHeaders = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+        dayHeaders.forEach((day) => {
+          days += `<div class="calendar-day-header">${day}</div>`;
+        });
+
+        // Previous month days
+        for (let x = firstDayIndex; x > 0; x--) {
+          const day = prevLastDay.getDate() - x + 1;
+          days += `<div class="calendar-day other-month disabled">${day}</div>`;
+        }
+
+        // Current month days
+        for (let day = 1; day <= lastDay.getDate(); day++) {
+          const date = new Date(currentYear, currentMonth, day);
+          date.setHours(0, 0, 0, 0);
+
+          const isPast = date < today;
+          const isSelected =
+            (selectedCheckin && date.getTime() === selectedCheckin.getTime()) ||
+            (selectedCheckout && date.getTime() === selectedCheckout.getTime());
+          const isInRange =
+            selectedCheckin &&
+            selectedCheckout &&
+            date > selectedCheckin &&
+            date < selectedCheckout;
+          const isStartDate =
+            selectedCheckin && date.getTime() === selectedCheckin.getTime();
+          const isEndDate =
+            selectedCheckout && date.getTime() === selectedCheckout.getTime();
+
+          let classes = "calendar-day";
+          if (isPast) classes += " disabled";
+          if (isSelected) classes += " selected";
+          if (isInRange) classes += " in-range";
+          if (isStartDate) classes += " start-date";
+          if (isEndDate) classes += " end-date";
+
+          days += `<div class="${classes}" data-date="${date.getTime()}">${day}</div>`;
+        }
+
+        // Next month days
+        for (let day = 1; day <= nextDays; day++) {
+          days += `<div class="calendar-day other-month disabled">${day}</div>`;
+        }
+
+        calendarGrid.innerHTML = days;
+
+        // Add click handlers to calendar days
+        document
+          .querySelectorAll(".calendar-day:not(.disabled)")
+          .forEach((dayEl) => {
+            dayEl.addEventListener("click", (e) => {
+              e.stopPropagation();
+              handleDateSelect(parseInt(dayEl.dataset.date));
+            });
+          });
+      }
+
+      function handleDateSelect(timestamp) {
+        const selectedDate = new Date(timestamp);
+
+        if (!selectingCheckout) {
+          // Selecting check-in
+          selectedCheckin = selectedDate;
+          selectedCheckout = null;
+          selectingCheckout = true;
+
+          // Update display
+          checkinDisplay.textContent = formatDateDisplay(selectedCheckin);
+          checkinDisplay.classList.remove("placeholder");
+          checkoutDisplay.textContent = "Select date";
+          checkoutDisplay.classList.add("placeholder");
+
+          // Update hidden input
+          checkinInput.value = formatDateValue(selectedCheckin);
+          checkoutInput.value = "";
+
+          nightsDisplay.style.display = "none";
+        } else {
+          // Selecting check-out
+          if (selectedDate <= selectedCheckin) {
+            // If selected date is before or same as check-in, restart selection
+            selectedCheckin = selectedDate;
+            selectedCheckout = null;
+
+            checkinDisplay.textContent = formatDateDisplay(selectedCheckin);
+            checkinDisplay.classList.remove("placeholder");
+            checkoutDisplay.textContent = "Select date";
+            checkoutDisplay.classList.add("placeholder");
+
+            checkinInput.value = formatDateValue(selectedCheckin);
+            checkoutInput.value = "";
+          } else {
+            // Valid check-out date
+            selectedCheckout = selectedDate;
+            selectingCheckout = false;
+
+            checkoutDisplay.textContent = formatDateDisplay(selectedCheckout);
+            checkoutDisplay.classList.remove("placeholder");
+
+            checkoutInput.value = formatDateValue(selectedCheckout);
+
+            // Calculate nights
+            const nights = Math.ceil(
+              (selectedCheckout - selectedCheckin) / (1000 * 60 * 60 * 24)
+            );
+            nightsCount.textContent = nights;
+            nightsPlural.textContent = nights === 1 ? "" : "s";
+            nightsDisplay.style.display = "block";
+
+            // Close calendar
+            setTimeout(() => {
+              datePickerPopup.classList.remove("active");
+              datePickerInput.classList.remove("active");
+            }, 300);
+          }
+        }
+
+        renderCalendar();
+        updateBookingSummary();
+      }
+
+      function formatDateDisplay(date) {
+        return date.toLocaleDateString("en-US", {
+          month: "short",
+          day: "numeric",
+          year: "numeric",
+        });
+      }
+
+      function formatDateValue(date) {
+        return date.toISOString().split("T")[0];
+      }
+
+      // Initialize calendar
+      renderCalendar();
 
       // Book room function (called from room cards)
       function bookRoom(roomType) {
@@ -2248,20 +2891,6 @@
       }
 
       // Event listeners
-      checkinInput.addEventListener("change", () => {
-        const checkinDate = new Date(checkinInput.value);
-        checkinDate.setDate(checkinDate.getDate() + 1);
-        checkoutInput.min = checkinDate.toISOString().split("T")[0];
-        if (
-          checkoutInput.value &&
-          new Date(checkoutInput.value) <= new Date(checkinInput.value)
-        ) {
-          checkoutInput.value = "";
-        }
-        updateBookingSummary();
-      });
-
-      checkoutInput.addEventListener("change", updateBookingSummary);
       roomTypeSelect.addEventListener("change", handleRoomTypeChange);
       guestsSelect.addEventListener("change", updateBookingSummary);
       acPreferenceSelect.addEventListener("change", updateBookingSummary);
